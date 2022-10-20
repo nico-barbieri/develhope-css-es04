@@ -1,5 +1,10 @@
 :root {
-    font-size: 10px;
+    --card-width: 25rem;
+    --color1: #F4F5F6;
+    --color2: #143642;
+    --color3: #0F8B8D;
+    --color4: #EC9A29;
+    font-weight: 200;
 }
 
 *{
@@ -8,6 +13,16 @@
     border: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+a{
+    color: black;
+}
+
+a:visited{
+    color: inherit;
 }
 
 img{
@@ -16,5 +31,95 @@ img{
 }
 
 .card {
+    width: var(--card-width);
+    height: auto;
+    padding: 2rem;
+    margin: 2rem;
+
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    background-color: var(--color1);
+    
+    border-radius: 1.5rem;
+    box-shadow: .25rem .5rem 2rem rgba(0, 0, 0, .1);
+}
+
+.card > *{
+    border-top: solid .15rem var(--color2);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.image-section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    border-top: none;
+    padding-top: 0;
+}
+
+.image-wrapper{
+    display: flex;
+
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+.image-description{
+    color: var(--color2);
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
+.image-description h3{
+    color: var(--color3);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.image-description p {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.card-item p {
+    font-size: 1rem;
+}
+
+.card-links ul {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: .5rem;
+}
+.card-links ul li {
+    padding: .5rem;
+    display: inline;
+}
+.card-links ul li a {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--color2);
+    transition: ease-in-out .3s;
+}
+
+.card-links ul li a::after {
+    display: block;
+    position: absolute;
+    content: " ";
+    background-color: var(--color4);
+    height: .15rem;
+    width: 100%;
+    transition: ease-in-out .3s;
+}
+
+.card-links ul li a:hover::after{
+    width: 50%;
+    transition: ease-in-out .3s;
 }
