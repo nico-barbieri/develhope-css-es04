@@ -1,3 +1,5 @@
+/*Basic settings*/
+
 :root {
     --card-width: 25rem;
     --color1: #F4F5F6;
@@ -30,6 +32,8 @@ img{
     height: 100%;
 }
 
+/*Card design*/
+
 .card {
     width: var(--card-width);
     height: auto;
@@ -42,15 +46,17 @@ img{
 
     background-color: var(--color1);
     
+    border: solid 0.25rem var(--color3);
     border-radius: 1.5rem;
     box-shadow: .25rem .5rem 2rem rgba(0, 0, 0, .1);
+    transition: ease-in-out .3s;
 }
 
 .card > *{
-    border-top: solid .15rem var(--color2);
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    margin-top: .2rem;
 }
+
+/*Image section*/
 
 .image-section {
     width: 100%;
@@ -68,6 +74,10 @@ img{
 
     border-radius: 1.2rem;
     overflow: hidden;
+}
+
+.image-wrapper img {
+    opacity: 90%;
 }
 
 .image-description{
@@ -88,9 +98,33 @@ img{
     font-weight: 200;
 }
 
-.card-item p {
+/*Card items*/
+
+.card-item {
+    background-color: var(--color3);
+    color: var(--color1);
     font-size: 1rem;
+    font-weight: 200;
+    padding: .5rem;
 }
+
+.card-item h3 {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.learn-more {
+    color: var(--color4) !important; 
+    padding-left: 1ch;
+    transition: ease-in-out .3s;
+}
+
+.learn-more:hover{
+    padding-left: 1.5ch;
+    transition: ease-in-out .3s;
+}
+
+/*Card links*/
 
 .card-links ul {
     display: flex;
@@ -103,23 +137,29 @@ img{
     display: inline;
 }
 .card-links ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-    font-size: 1.2rem;
-    color: var(--color2);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color4);
     transition: ease-in-out .3s;
 }
 
 .card-links ul li a::after {
     display: block;
-    position: absolute;
     content: " ";
     background-color: var(--color4);
     height: .15rem;
-    width: 100%;
+    width: 50%;
     transition: ease-in-out .3s;
 }
 
+/*Card links animation*/
+
 .card-links ul li a:hover::after{
-    width: 50%;
+    width: 100%;
     transition: ease-in-out .3s;
 }
